@@ -1,0 +1,78 @@
+{
+  "name": "Mitti",
+  "type": "OSC",
+  "path": "Software",
+
+  "version": "0.0.1",
+  "description": "Control Mitti",
+  "url": "https://github.com/DonGuig/Mitti-Chataigne-module",
+  "downloadURL": "https://github.com/DonGuig/Mitti-Chataigne-module/archive/master.zip",
+
+  "hasInput": false,
+  "hasOutput": true,
+  "hideDefaultCommands": false,
+  "defaults": {
+    "autoAdd": false,
+    "splitArguments": false,
+    "useHierarchy": false,
+    "autoFeedback": false,
+    "booleanSendMode": "Int",
+    "OSC Outputs": {
+      "OSC Output": {
+        "remotePort": 51000,
+        "local": true,
+        "listenToFeedback": false
+      }
+    }
+  },
+
+  "parameters": {},
+
+  "hideDefaultParameters": [
+    "colorSendMode",
+    "autoFeedback",
+    "useHierarchy",
+    "colorSendMode",
+    "autoAdd",
+    "oscInput/localPort",
+    "oscOutputs/oscOutput/remotePort",
+    "oscOutputs/oscOutput/listenToFeedback",
+    "booleanSendMode"
+  ],
+
+  "scripts": ["moduleScript.js"],
+
+  "values": {
+    "Play Selected Cue": {
+      "type": "Trigger"
+    },
+    "Pause": {
+      "type": "Trigger"
+    },
+    "Rewind": {
+      "type": "Trigger"
+    }
+  },
+
+  "commands": {
+    "Play Selected Cue": {
+      "menu": "",
+      "callback": "playSelectedCue"
+    },
+    "Play Cue at index": {
+      "menu": "",
+      "callback": "playCueAtIndex",
+      "parameters": {
+        "index": { "type": "Integer", "min": 1, "max": 999, "default": 1 }
+      }
+    },
+    "Pause": {
+      "menu": "",
+      "callback": "pause"
+    },
+    "Rewind": {
+      "menu": "",
+      "callback": "rewind"
+    }
+  }
+}
